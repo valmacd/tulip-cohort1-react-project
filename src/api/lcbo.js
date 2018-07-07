@@ -17,3 +17,11 @@ export const fetchLcboEndpoint = (endpoint, params, options = {}) =>
       Authorization: `Token ${REACT_APP_LCBO_API_KEY}`
     }
   }).then(res => res.json());
+
+  export const fetchLcboStoreEndpoint = (endpoint, options = {}) =>
+  fetch(`${LCBO_API_BASE_URL}${endpoint}`, {
+    ...options,
+    headers: {
+      Authorization: `Token ${REACT_APP_LCBO_API_KEY}`
+    }
+  }).then(res => res.json()); 
